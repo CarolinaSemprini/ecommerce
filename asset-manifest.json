@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/ecommerce/static/css/main.a049ab85.css",
+    "main.js": "/ecommerce/static/js/main.19762f18.js",
+    "static/js/787.dcc73137.chunk.js": "/ecommerce/static/js/787.dcc73137.chunk.js",
+    "static/media/VIÑEDOS.png": "/ecommerce/static/media/VIÑEDOS.586a8f4405e5bb5ad05f.png",
+    "static/media/logo.svg": "/ecommerce/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/ecommerce/index.html",
+    "main.a049ab85.css.map": "/ecommerce/static/css/main.a049ab85.css.map",
+    "main.19762f18.js.map": "/ecommerce/static/js/main.19762f18.js.map",
+    "787.dcc73137.chunk.js.map": "/ecommerce/static/js/787.dcc73137.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a049ab85.css",
+    "static/js/main.19762f18.js"
+  ]
+}
