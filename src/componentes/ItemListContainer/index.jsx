@@ -7,7 +7,7 @@ export const ItemListContainer=(props)=>{
         <div>
             <PersonIcon className="avatar" sx={{ color: yellow[500] }} fontSize="large"/>
    
-            <h1  style={{color:"yellow", fontSize:"16px", paddingRight:"15px"}}>Bienvenida {props.greeting} </h1>
+            <h1  style={{color:"yellow", fontSize:"16px", paddingRight:"10px"}}>Bienvenida {props.greeting} </h1>
         </div>
     )
 }

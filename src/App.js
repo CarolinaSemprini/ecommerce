@@ -1,9 +1,7 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import NavBar from './componentes/NavBar/NavBar';
 
-
-import ItemListContainer from './componentes/ItemListContainer/index';
 
 function App() {
   return (
