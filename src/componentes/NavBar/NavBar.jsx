@@ -3,7 +3,7 @@ import VIÑEDOS from "../../imagenes/VIÑEDOS.png";
 import CartWidget from "../CartWidget";
 import ItemListContainer from "../ItemListContainer";
 
-export const NavBar =()=>{
+ const NavBar =()=>{
    
     return(
         <header>

@@ -1,8 +1,8 @@
 import React from "react";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { pink, yellow } from '@mui/material/colors';
+import {  yellow } from '@mui/material/colors';
 
-export const CartWidget=()=>{
+const CartWidget=()=>{
     return(
         <div className="cart">
             <ShoppingCartIcon fontSize="large" sx={{ color: yellow[500] }}/>

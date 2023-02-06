@@ -2,7 +2,7 @@ import React from "react";
 import { yellow } from '@mui/material/colors';
 import PersonIcon from '@mui/icons-material/Person';
 
-export const ItemListContainer=(props)=>{
+ const ItemListContainer=(props)=>{
     return(
         <div>
             <PersonIcon className="avatar" sx={{ color: yellow[500] }} fontSize="large"/>
