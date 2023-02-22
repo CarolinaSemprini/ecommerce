@@ -1,0 +1,14 @@
+.contador{
+    
+    width: 30%;
+    background-color: rgb(184, 174, 46);
+    padding: 1rem;
+    margin-left: 10%;
+    text-align: center;
+    
+    
+}
+.contador h1{
+    text-align: center;
+   
+}

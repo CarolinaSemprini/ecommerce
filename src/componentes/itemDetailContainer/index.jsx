@@ -1,13 +1,9 @@
-import React, {useState, useEffect}from "react";
-import { yellow } from '@mui/material/colors';
-import PersonIcon from '@mui/icons-material/Person';
-import '../itemCount/itemCount.css';
+import React,{useEffect, useState} from "react";
+import ItemDetail from "../itemDetail";
+import {useParams} from "react-router-dom";
+import '../itemDetailContainer/itemDetailContainer.css';
 
-import ItemList from "../itemList";
-import { useParams } from "react-router-dom";
-
-
-const productos=[
+const producto=[
     {id:1, imagen:'https://rutini.vteximg.com.br/arquivos/ids/156370-1400-1600/Dominio-Malbec.jpg?v=637952337475000000', category:'vinos', title:'blanco'},
     {id:2, imagen:'https://rutini.vteximg.com.br/arquivos/ids/156308-1400-1600/Encuentro-Malbec.jpg?v=637765076769800000', category:'vinos', title:'aruma'},
     {id:3, imagen:'https://rutini.vteximg.com.br/arquivos/ids/156346-1400-1600/Cajon-Apartado-Gran-Malbec-Single-Vineyard-Gualtallary-Malbec-Dominio-Gran-Malbec-x3_75-.jpg?v=637850390864600000', category:'vinos', title:'Malbec Box I'},
@@ -22,46 +18,28 @@ const productos=[
 
 ];
 
- const ItemListContainer=(props)=>{
+export const ItemDetailContainer =()=>{
 
-    const [data, setData]=useState([]);
+    const[data, setData]=useState({});
+    const{detalleId}=useParams();
 
-    const{categoriaId}=useParams();
-       
     useEffect(()=>{
         {/*Simulando que demora unos 3 segundos */}
         const getData=new Promise(resolve=>{
-            setTimeout(()=>{
-                resolve(productos)
-            },1000);
+
+                resolve(producto)
+            
         });
-        if(categoriaId){
-            {/*Cundo se resuelve la promesa, setea la respuesta y la ingresa en la data */}
-            getData.then(res=>setData(res.filter(productos=>productos.category===categoriaId)))  ;
-        }else{
-            getData.then(res=>setData(res)); 
-        }
 
-        
-    },[categoriaId])
-
+        {/*Cundo se resuelve la promesa, setea la respuesta y la ingresa en la data */}
+        getData.then(res=>setData(res.find(productos=>productos.id===parseInt(detalleId))))  ;
+    },[])
     
     return(
-        <>
-        <div>
-            <PersonIcon className="avatar" sx={{ color: yellow[500] }} fontSize="large"/>
-   
-            <h1  style={{color:"yellow", fontSize:"16px", paddingRight:"10px"}}>Bienvenida {props.greeting} </h1>
-
+        <div className="detalles_producto">
+            <ItemDetail data={data}/>
         </div>
-        
-        <div className="item">
-            <ItemList data={data}/>
-        </div>
-        
-        </>
-        
-    );
+    )
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;

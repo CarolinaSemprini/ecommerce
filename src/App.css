@@ -6,17 +6,10 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.App{
-  
-  width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
-  box-shadow: 0 5px 6px #a553b6a4;
-  padding: 0 15px;
   box-sizing: border-box;
 }
+
+
 /*-----------header---------*/
 header{
   width: 100%;
@@ -41,7 +34,7 @@ a{
 }
 a:hover{
   color: #edff46;
-  box-shadow: 0px 0px 50px #e6ff03;
+  box-shadow: 0px 0px 50px #d3aa38;
   
 }
 li{
@@ -105,4 +98,20 @@ header .cart span{
   flex-direction: row;
   padding-left: 60px;
   
+}
+.item{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 120px;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content:space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item p {
+  color: black;
+ display: flex;
+ justify-content: center;
 }

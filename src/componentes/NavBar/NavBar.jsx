@@ -1,31 +1,35 @@
 import React from "react";
 import VIÑEDOS from "../../imagenes/VIÑEDOS.png";
 import CartWidget from "../CartWidget";
-import ItemListContainer from "../ItemListContainer";
+import { NavLink } from "react-router-dom";
+
 
  const NavBar =()=>{
    
     return(
         <header>
-          <a href="/" >
+          <NavLink to='/' >
             <div className="logo">
                 <img src={VIÑEDOS} width="150"/>
             
             </div>
-          </a> 
+          </NavLink> 
           <ul>
             <li>
-                <a href="/">Sobre Nosotros</a>
+              <NavLink to='/'>Catalogo</NavLink>
             </li>
             <li>
-                <a href="#">Productos</a>
+                <NavLink to='/categoria/linea'>Líneas</NavLink>
             </li>
             <li>
-                <a href="#">Contacto</a>
+                <NavLink to='/categoria/vinos'>Vinos</NavLink>
+            </li>
+            <li>
+                <NavLink  to='cart'>
+                  <CartWidget className="cart"/>
+                  </NavLink>
             </li>
           </ul>
-          <CartWidget className="cart"/>
-          <ItemListContainer greeting="Carolina"/>
           
         </header>
     )
