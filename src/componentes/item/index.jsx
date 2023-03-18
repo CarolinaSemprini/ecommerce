@@ -1,5 +1,5 @@
 import './item.css';
-import React,{useContext} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
@@ -18,7 +18,7 @@ const Item =({info})=>{
     const theme = createTheme({
         palette: {
           primary: {
-            // This is green.A700 as hex.
+            
             main: '#E7B10A',
           },
         },
@@ -64,30 +64,6 @@ const Item =({info})=>{
           </Link>
         </Card>
       </Box>
-
-
-
-
-        /*<Grid  container spacing={1} md={3} >
-         <Grid 
-            justifyContent="center"
-            alignItems="center"
-            marginLeft="12%"
-            marginTop="80px" 
-            height="450px"
-            
-            >
-            <Card className='productos'> 
-            <Link to={`/detalle/${info.id}`} className='productos'>
-                <img variant="bottom_imagen" src={info.imagen} alt='blnaco'/>
-                
-                    <p className='titulo-producto'>{info.title}</p>
-                    <p className='precio-producto'><strong>${info.price}</strong></p>
-                    <button type="button" className="btn btn-warning boton-comprar">COMPRAR</button>
-                </Link>
-             </Card>
-            </Grid>
-        </Grid>*/
              
     )
 }

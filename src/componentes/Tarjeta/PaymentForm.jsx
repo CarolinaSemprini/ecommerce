@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import 'react-credit-cards-2/es/styles-compiled.css';
 import Cards from 'react-credit-cards-2';
-import { Link } from 'react-router-dom';
 import { useCartContext } from "../../context/CartContext";
 import '../Tarjeta/paymentform.css'
-
-
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { useNavigate } from 'react-router-dom';
 const PaymentForm = () => {
 
-
+  const { cart, totalPrice,  clearCart } = useCartContext();
     const initialStateValues={
       number: "",
       expiry: "",
@@ -17,19 +16,43 @@ const PaymentForm = () => {
     }
 
     const[values, setValues]=useState(initialStateValues);
-
+    const navegar = useNavigate()
     //capturar los cambios de los input
     const handleInputChange=e=>{
       const {name,value}=e.target;
       setValues({...values, [name]:value})
     }
     
-    
+    const order = {
+      datosPago:values,
+      items: cart.map((productos) => ({
+        id: productos.id,
+        title: productos.title,
+        price: productos.price,
+        cantidad: productos.cantidad,
+      })),
+      total: totalPrice(),
+      
+    };
+  
+    const datosUsuario = () => {
+      const db = getFirestore();
+      const ordersCollection = collection(db, "orders");
+      addDoc(ordersCollection, {
+        
+        item: order,})
+        
+        .then(({ id }) => {
+          navegar(`/GraciasCompra/${id}`) 
+
+        });
+        
+    };
 
     const handleSubmit=e=>{
     e.preventDefault();
-    console.log(values)
-   
+    datosUsuario()
+    clearCart();
     }
     
     return (
@@ -100,8 +123,8 @@ const PaymentForm = () => {
 
                 </div>
             </div>
-            <Link to='/GraciasCompra' ><button className="btn btn-success btn-block btn-lg pagar" onClick={handleSubmit} 
-               >Pagar</button></Link>
+           <button className="btn btn-success btn-block btn-lg pagar" onClick={handleSubmit} 
+               >Pagar</button>
            
            
         </form>
