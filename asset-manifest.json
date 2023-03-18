@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ecommerce/static/css/main.6a00bb72.css",
-    "main.js": "/ecommerce/static/js/main.39ad95e0.js",
+    "main.css": "/ecommerce/static/css/main.d64c46ee.css",
+    "main.js": "/ecommerce/static/js/main.e64f3121.js",
     "static/js/787.dcc73137.chunk.js": "/ecommerce/static/js/787.dcc73137.chunk.js",
     "static/media/VIÑEDOS.png": "/ecommerce/static/media/VIÑEDOS.586a8f4405e5bb5ad05f.png",
     "index.html": "/ecommerce/index.html",
-    "main.6a00bb72.css.map": "/ecommerce/static/css/main.6a00bb72.css.map",
-    "main.39ad95e0.js.map": "/ecommerce/static/js/main.39ad95e0.js.map",
+    "main.d64c46ee.css.map": "/ecommerce/static/css/main.d64c46ee.css.map",
+    "main.e64f3121.js.map": "/ecommerce/static/js/main.e64f3121.js.map",
     "787.dcc73137.chunk.js.map": "/ecommerce/static/js/787.dcc73137.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a00bb72.css",
-    "static/js/main.39ad95e0.js"
+    "static/css/main.d64c46ee.css",
+    "static/js/main.e64f3121.js"
   ]
 }
