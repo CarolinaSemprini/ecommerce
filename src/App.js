@@ -5,25 +5,28 @@ import ItemDetailContainer from './componentes/itemDetailContainer';
 import ItemListContainer from './componentes/ItemListContainer';
 import Cart from './componentes/Cart/index';
 import {BrowserRouter, Routes,Route} from 'react-router-dom';
-
+import CartProvider from "./context/CartContext";
+import PaymentForm from './componentes/Tarjeta/PaymentForm';
+import GraciasCompra from './componentes/Tarjeta/GraciasCompra';
 
 
 
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <div className="App">
+    <BrowserRouter className="App">
+      <CartProvider>
         <NavBar/>
-         
-        <Routes>
-        <Route path='/ecommerce' element={ <ItemListContainer/> }/>
-          <Route path='/' element={ <ItemListContainer/> }/>
-          <Route path='/categoria/:categoriaId' element={ <ItemListContainer/> }/>
-          <Route path='/cart' element={  <Cart/> }/>
-          <Route path='/detalle/:detalleId' element={ <ItemDetailContainer/> }/>
-        </Routes>
-      </div>
+          <Routes>
+          <Route path='/ecommerce' element={ <ItemListContainer/> }/>
+            <Route path='/' element={ <ItemListContainer/> }/>
+            <Route path='/categoria/:categoriaId' element={ <ItemListContainer/> }/>
+            <Route path='/cart' element={  <Cart/> }/>
+            <Route path='/detalle/:detalleId' element={ <ItemDetailContainer/> }/>
+            <Route path='/PaymentForm' element={<PaymentForm/>}/>
+            <Route path='/:GraciasCompra' element={<GraciasCompra/>}/>
+          </Routes>
+        </CartProvider>
     </BrowserRouter>  
     </>
   );

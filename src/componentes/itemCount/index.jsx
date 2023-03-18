@@ -1,5 +1,6 @@
 import './itemCount.css';
 
+
 import React, { useState, useEffect} from 'react';
 
 export const ItemCount=({inicial, stock, onAdd})=>{
@@ -23,12 +24,12 @@ export const ItemCount=({inicial, stock, onAdd})=>{
     return(
         <div className='contador'>
             {/* con disable le coloco un limite al contador, en este caso cuando sea menor a 1 */}
-            <button disabled={contador <=1} onClick={menos}>-</button>
+            <button className='menos'  disabled={contador <=1} onClick={menos}>-</button>
             <span>{contador}</span>
-            <button disabled={contador >= stock} onClick={aumentar}>+</button>
+            <button className='mas' disabled={contador >= stock} onClick={aumentar}>+</button>
             <div>
                 {/*Si el stock es menor a cero entonces el boton de agregar al carrito queda desactivado  y si es mayor a cero entonces recibe la funcion de onAdd que lo recibe del componente ItemListContainer*/}
-                <button disabled={stock<=0} onClick={()=> onAdd(contador)}>Agregar al Carrito</button>
+                <button className='agregar' disabled={stock<=0} onClick={()=> onAdd(contador)}>Agregar al Carrito</button>
             </div>
         </div>
     );
